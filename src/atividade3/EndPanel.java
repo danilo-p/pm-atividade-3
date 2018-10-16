@@ -59,7 +59,7 @@ public class EndPanel extends JPanel {
                 message = "You won! :D";
                 break;
             case 2:
-                message = "The computed won! ¯\\_(ツ)_/¯";
+                message = "The computer won! ¯\\_(ツ)_/¯";
                 break;
         }
         

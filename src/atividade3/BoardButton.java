@@ -22,11 +22,11 @@ public class BoardButton extends JButton {
         this.j = j;
         this.gameFrame = gameFrame;
         this.addActionListener((ActionEvent e) -> {
-            gameFrame.makeMovement(i, j);
+            gameFrame.makeUserMovement(new Move(i, j));
         });
     }
 
     public void refresh() {
-        this.setText(this.gameFrame.getBoardCell(this.i, this.j));
+        this.setText("" + this.gameFrame.getBoardCell(this.i, this.j));
     }
 }
