@@ -3,16 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package atividade3;
+package tictactoe.logic;
 
 /**
- *
+ * Generic player class.
+ * 
+ * The game player should know his symbol and make his moves when requested. The
+ * logic for the moves should be implemented for whom is extending the class.
+ * 
  * @author danilo
  */
 public abstract class Player {
     private final char symbol;
     
-    Player(char symbol) {
+    public Player(char symbol) {
         this.symbol = symbol;
     }
 

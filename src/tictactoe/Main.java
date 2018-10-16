@@ -3,19 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package atividade3;
+package tictactoe;
+
+import tictactoe.logic.Game;
 
 /**
- *
+ * The executable project class.
+ * 
  * @author danilo
  */
-public class Atividade3 {
-
+public class Main {
     /**
+     * Just start the game
+     * 
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new GameFrame();
+        Game game = new Game();
+        game.init();
     }
-
 }

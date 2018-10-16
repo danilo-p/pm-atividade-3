@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package atividade3;
+package tictactoe.ui;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -12,57 +12,71 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import tictactoe.logic.Game;
 
 /**
+ * Display the end game screen
+ * 
+ * This is the component that is presented to the user when the game ends. This
+ * should show who won the game, if somebody won.
  *
  * @author danilo
  */
-public class EndPanel extends JPanel {
+public class EndScreen extends GameScreen {
     private final JLabel winnerLabel;
 
-    EndPanel(GameFrame gameFrame) {
-        super();
-        
+    public EndScreen(Game game) {
+        super(game);
+        this.winnerLabel = new JLabel("", SwingConstants.CENTER);
+    }
+
+    @Override
+    public void init() {
         this.setBorder(new EmptyBorder(15, 15, 15, 15));
         this.setLayout(new BorderLayout());
-        
-        this.winnerLabel = new JLabel("", SwingConstants.CENTER);
 
         this.add(winnerLabel, BorderLayout.CENTER);
         winnerLabel.setAlignmentX(CENTER_ALIGNMENT);
+        winnerLabel.setFont(GameFrame.GAME_TITLE_FONT);
         
-        JPanel buttonsPanel = new JPanel();
+        Game game = this.getGame();
 
         JButton playAgainButton = new JButton("Play again");
+        playAgainButton.setFont(GameFrame.GAME_BUTTON_FONT);
         playAgainButton.addActionListener((ActionEvent e) -> {
-            gameFrame.startGame();
+            game.start();
         });
-        buttonsPanel.add(playAgainButton);
+        
         
         JButton quitButton = new JButton("Quit game");
+        quitButton.setFont(GameFrame.GAME_BUTTON_FONT);
         quitButton.addActionListener((ActionEvent e) -> {
-            gameFrame.quitGame();
+            game.quit();
         });
+
+        JPanel buttonsPanel = new JPanel();
+        buttonsPanel.add(playAgainButton);
         buttonsPanel.add(quitButton);
         
         this.add(buttonsPanel, BorderLayout.PAGE_END);
     }
+    
     
     public void setWinner(int winner) {
         String message = "";
         
         switch (winner) {
             case -1:
-                message = "Nobody won '-'";
+                message = "Nobody won<br>'-'";
                 break;
             case 1:
-                message = "You won! :D";
+                message = "You won!<br>:D";
                 break;
             case 2:
-                message = "The computer won! ¯\\_(ツ)_/¯";
+                message = "The computer won!<br>¯\\_(ツ)_/¯";
                 break;
         }
-        
-        winnerLabel.setText(message);
+
+        winnerLabel.setText("<html><body><center>" + message + "</center></body></html>");
     }
 }

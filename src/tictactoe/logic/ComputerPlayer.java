@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package atividade3;
+package tictactoe.logic;
 
 import java.util.Random;
 
 /**
- *
+ * The computer player that plays against the user.
+ * 
+ * It makes random moves respecting the already filled places.
+ * 
  * @author danilo
  */
 public class ComputerPlayer extends Player{
