@@ -5,6 +5,7 @@
  */
 package tictactoe.ui;
 
+import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JFrame;
 import tictactoe.logic.Game;
@@ -27,6 +28,8 @@ public class GameFrame extends JFrame {
         GameFrame.GAME_FONT_STYLE, GameFrame.GAME_TITLE_FONT_SIZE);
     public static Font GAME_BUTTON_FONT = new Font(GameFrame.GAME_FONT_NAME,
         GameFrame.GAME_FONT_STYLE, GameFrame.GAME_BUTTON_FONT_SIZE);
+    public static Color GAME_DARK_COLOR = Color.BLACK;
+    public static Color GAME_LIGHT_COLOR = Color.WHITE;
 
     private final Game game;
     private final BoardScreen boardScreen;
@@ -46,7 +49,7 @@ public class GameFrame extends JFrame {
     
     public void init() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(GameFrame.WINDOW_SIZE, GameFrame.WINDOW_SIZE);        
+        this.setSize(GameFrame.WINDOW_SIZE, GameFrame.WINDOW_SIZE);
         this.setVisible(true);
     }
 

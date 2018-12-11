@@ -29,7 +29,9 @@ public class BoardButton extends JButton {
     }
     
     public void init() {
-        this.setFont(GameFrame.GAME_BUTTON_FONT);
+        this.setFont(GameFrame.GAME_TITLE_FONT);
+        this.setBackground(GameFrame.GAME_DARK_COLOR);
+        this.setForeground(GameFrame.GAME_LIGHT_COLOR);
         this.addActionListener((ActionEvent e) -> {
             BoardButton.this.game.makeUserMovement(BoardButton.this.move);
         });

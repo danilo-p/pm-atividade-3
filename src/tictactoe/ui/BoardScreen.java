@@ -29,6 +29,7 @@ public class BoardScreen extends GameScreen {
     public void init() {
         this.setBorder(new EmptyBorder(15, 15, 15, 15));
         this.setLayout(new GridLayout(3, 3, 15, 15));
+        this.setBackground(GameFrame.GAME_DARK_COLOR);
         for (int i = 0; i < buttons.length; i++) {
             for (int j = 0; j < buttons[i].length; j++) {
                 this.buttons[i][j] = new BoardButton(this.getGame(),
